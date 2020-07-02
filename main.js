@@ -13,26 +13,62 @@ function newForEach(array, callback){
 }
 
 // complete the functions below so that they mimic the built in methods
-function newSome() {
-
+function newSome(array, callback) {
+    for(let index = 0; index <array.length; index ++){
+        let currentItem = array[index]
+        if(callback(currentItem)){
+            return true
+        }
+    }
+    return false
 }
 
-function newEvery() {
-
+function newEvery(array, callback) {
+    for(let index = 0; index <array.length; index ++){
+        let currentItem = array[index]
+        if(!callback(currentItem)){
+            return false
+        }
+    }
+    return true
 }
 
-function newFind() {
-
+function newFind(array, callback) {
+    for(let index = 0; index <array.length; index ++){
+        let currentItem = array[index]
+        if(callback(currentItem)){
+            return currentItem
+        }
+    }
+    return undefined
 }
 
-function newFindIndex() {
-
+function newFindIndex(array, callback) {
+    for(let index = 0; index <array.length; index ++){
+        let currentItem = array[index]
+        if(callback(currentItem)){
+            return index
+        }
+    }
+    return -1 
 }
 
-function newMap() {
-
+function newMap(array, callback) {
+    let newArray = []
+    for(let index = 0; index <array.length; index ++){
+        let currentItem = array[index]
+        newArray.push(callback(currentItem))
+    }
+    return newArray
 }
 
-function newFilter() {
-
+function newFilter(array, callback) {
+    let newArray = []
+    for(let index = 0; index <array.length; index ++){
+        let currentItem = array[index]
+        if(callback(currentItem)){
+            newArray.push(currentItem)
+        }
+    }
+    return newArray
 }
